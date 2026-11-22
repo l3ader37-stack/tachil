@@ -1401,7 +1401,7 @@ button { font-family: inherit; border: none; background: none; cursor: pointer; 
 }
 
 .footer .logo__img {
-  height: 36px;       /* Размер логотипа в футере */
+  height: 24px;       /* Размер логотипа в футере */
 }
 
 @media (max-width: 767px) {
