@@ -1406,6 +1406,6 @@ button { font-family: inherit; border: none; background: none; cursor: pointer; 
 
 @media (max-width: 767px) {
   .logo__img {
-    height: 24px;     /* Размер логотипа на телефоне */
+    height: 20px;     /* Размер логотипа на телефоне */
   }
 }
