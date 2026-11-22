@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TäçHil — Эталон чистоты, свежести и заботы о доме</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body class="page-home">
+
+  <!-- Полноэкранный 3D-фон -->
+  <div id="webglContainer" class="webgl-fixed-bg"></div>
+
+  <!-- Мягкий солнечный блик за курсором -->
+  <div class="cursor-glow" id="cursorGlow"></div>
+
+  <!-- Мобильная тонкая полоска чистоты -->
+  <div class="purity-mobile-bar"><div class="purity-mobile-bar__fill" id="purityMobileFill"></div></div>
+
+  <!-- Боковая скролл-система «Шкала чистоты» (ПК и планшеты) -->
+  <aside class="purity-scroll" id="purityScroll" aria-label="Шкала чистоты">
+    <div class="purity-scroll__sparkle" id="puritySparkle">✦</div>
+
+    <div class="purity-scroll__body">
+      <div class="purity-tube">
+        <div class="purity-tube__liquid" id="purityLiquid">
+          <span class="tube-bubble tube-bubble--1"></span>
+          <span class="tube-bubble tube-bubble--2"></span>
+          <span class="tube-bubble tube-bubble--3"></span>
+        </div>
+      </div>
+
+      <div class="purity-dots">
+        <button class="purity-dot is-active" data-target="#hero" data-label="Старт" aria-label="Старт"></button>
+        <button class="purity-dot" data-target="#showcase" data-label="Продукция" aria-label="Продукция"></button>
+        <button class="purity-dot" data-target="#certificates" data-label="ISO" aria-label="Сертификаты"></button>
+        <button class="purity-dot" data-target="#b2b" data-label="Прайс" aria-label="Оптовикам"></button>
+      </div>
+    </div>
+
+    <div class="purity-scroll__readout">
+      <span class="purity-scroll__num" id="purityPercent">0%</span>
+      <span class="purity-scroll__label">чистоты</span>
+    </div>
+  </aside>
+
+  <!-- Белоснежная шапка -->
+  <header class="header" id="header">
+    <div class="container header__inner">
+      <a href="index.html" class="logo" aria-label="TäçHil">
+        <img src="assets/img/logo.png" alt="TäçHil" class="logo__img" />
+      </a>
+
+      <nav class="nav" id="nav">
+        <a href="#showcase" class="nav__link">Продукция</a>
+        <a href="catalog.html" class="nav__link">Полный каталог</a>
+        <a href="#certificates" class="nav__link">Сертификаты</a>
+        <a href="#b2b" class="nav__link">Оптовикам и прайс</a>
+        <a href="#contacts" class="nav__link">Контакты</a>
+      </nav>
+
+      <div class="header__actions">
+        <a href="tel:+99312595457" class="header__phone">+993 12 595457</a>
+        <div class="lang-switcher" role="group" aria-label="Язык">
+          <button type="button" class="lang-btn is-active" data-lang-btn="ru">RU</button>
+          <button type="button" class="lang-btn" data-lang-btn="en">EN</button>
+          <button type="button" class="lang-btn" data-lang-btn="tm">TM</button>
+        </div>
+        <button class="btn btn--soft btn--sm magnetic" id="cartTrigger">
+          <span>Заявка</span>
+          <span class="badge" id="cartCount">0</span>
+        </button>
+        <button class="burger" id="burger" aria-label="Открыть меню">
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Мобильное меню -->
+  <div class="mobile-menu" id="mobileMenu">
+    <nav class="mobile-menu__nav">
+      <a href="#showcase" class="mobile-menu__link">Продукция</a>
+      <a href="catalog.html" class="mobile-menu__link">Полный каталог</a>
+      <a href="#certificates" class="mobile-menu__link">Сертификаты</a>
+      <a href="#b2b" class="mobile-menu__link">Оптовикам и прайс</a>
+      <a href="#contacts" class="mobile-menu__link">Контакты</a>
+    </nav>
+    <a href="tel:+99312595457" class="mobile-menu__phone">+993 12 595457</a>
+  </div>
+
+  <main class="main-layer">
+    <!-- ==========================================
+         БЛОК 1: HERO НАД 3D-МИРОМ СВЕЖЕСТИ
+         ========================================== -->
+    <section class="hero" id="hero">
+      <div class="container hero__layout">
+        <div class="hero__center">
+          <p class="hero__eyebrow reveal-fade">TäçHil • Производство в Туркменистане с 2006 года</p>
+
+          <h1 class="hero__title">
+            <span class="line-mask"><span class="line-reveal">Кристальная чистота</span></span>
+            <span class="line-mask"><span class="line-reveal">и <span class="text-gradient">свежесть</span> каждый день</span></span>
+          </h1>
+
+          <p class="hero__subtitle reveal-fade">
+            Бытовая химия, средства для стирки, парфюмированное мыло и влажные салфетки мирового стандарта качества ISO.
+          </p>
+
+          <div class="hero__actions reveal-fade">
+            <a href="#showcase" class="btn btn--primary magnetic">
+              <span>Выбрать категорию</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                <path d="M12 5v14M5 12l7 7 7-7"/>
+              </svg>
+            </a>
+            <a href="catalog.html" class="btn btn--white magnetic">
+              <span>Открыть полный каталог</span>
+            </a>
+          </div>
+        </div>
+
+    </section>
+
+    <!-- ==========================================
+         БЛОК 2: ВИДЫ ПРОДУКЦИИ (8 КАТЕГОРИЙ)
+         ========================================== -->
+    <section class="showcase-section" id="showcase">
+      <div class="container">
+        <div class="section-head section-head--center">
+          <span class="section-kicker">Виды продукции</span>
+          <h2 class="section-title">Нажмите на категорию для перехода в каталог</h2>
+        </div>
+
+        <div class="brand-showcase-grid">
+
+          <!-- 1. Laundry detergent (2.png) -->
+          <a href="catalog.html?cat=laundry" class="brand-banner brand-banner--tac">
+            <div class="brand-banner__line brand-banner__line--top"></div>
+            <div class="brand-banner__logo">
+              <span class="logo-placeholder">Laundry detergent</span>
+              <small>Гели для стирки • Täç & Täç Baby</small>
+            </div>
+            <div class="brand-banner__product">
+              <img src="assets/img/home/2.png" alt="Laundry detergent"
+                   style="--w: 200px; --x: -10px; --y: 0px; --rot: 0deg;">
+            </div>
+            <div class="brand-banner__line brand-banner__line--bottom"></div>
+          </a>
+
+          <!-- 2. Dishwashing liquid (7.png) -->
+          <a href="catalog.html?cat=dish" class="brand-banner brand-banner--glim">
+            <div class="brand-banner__line brand-banner__line--top"></div>
+            <div class="brand-banner__logo">
+              <span class="logo-placeholder">Dishwashing liquid</span>
+              <small>Для мытья посуды • Glim & Täç Hil</small>
+            </div>
+            <div class="brand-banner__product">
+              <img src="assets/img/home/7.png" alt="Dishwashing liquid"
+                   style="--w: 170px; --x: -8px; --y: -4px; --rot: 0deg;">
+            </div>
+            <div class="brand-banner__line brand-banner__line--bottom"></div>
+          </a>
+
+          <!-- 3. Perfumed Foam Soap (4.png) -->
+          <a href="catalog.html?cat=foam-soap" class="brand-banner brand-banner--anbar">
+            <div class="brand-banner__line brand-banner__line--top"></div>
+            <div class="brand-banner__logo">
+              <span class="logo-placeholder">Perfumed Foam Soap</span>
+              <small>Парфюмированное мыло-пенка • Anbar</small>
+            </div>
+            <div class="brand-banner__product">
+              <img src="assets/img/home/4.png" alt="Perfumed Foam Soap"
+                   style="--w: 220px; --x: -8px; --y: -4px; --rot: 0deg;">
+            </div>
+            <div class="brand-banner__line brand-banner__line--bottom"></div>
+          </a>
+
+          <!-- 4. Liquid Soap (6.png) -->
+          <a href="catalog.html?cat=liquid-soap" class="brand-banner brand-banner--pocket">
+            <div class="brand-banner__line brand-banner__line--top"></div>
+            <div class="brand-banner__logo">
+              <span class="logo-placeholder">Liquid Soap</span>
+              <small>Жидкое мыло • Täç Hil 400 ml</small>
+            </div>
+            <div class="brand-banner__product">
+              <img src="assets/img/home/6.png" alt="Liquid Soap"
+                   style="--w: 235px; --x: -10px; --y: -2px; --rot: 0deg;">
+            </div>
+            <div class="brand-banner__line brand-banner__line--bottom"></div>
+          </a>
+
+          <!-- 5. Moisturizing Liquid Soap (3.png) -->
+          <a href="catalog.html?cat=moisturizing-soap" class="brand-banner brand-banner--liora">
+            <div class="brand-banner__line brand-banner__line--top"></div>
+            <div class="brand-banner__logo">
+              <span class="logo-placeholder">Moisturizing Liquid Soap</span>
+              <small>Увлажняющее крем-мыло • Liora 1 kg</small>
+            </div>
+            <div class="brand-banner__product">
+              <img src="assets/img/home/3.png" alt="Moisturizing Liquid Soap"
+                   style="--w: 180px; --x: -8px; --y: -4px; --rot: 0deg;">
+            </div>
+            <div class="brand-banner__line brand-banner__line--bottom"></div>
+          </a>
+
+          <!-- 6. Premium Wet Wipes (1.png) -->
+          <a href="catalog.html?cat=wipes" class="brand-banner brand-banner--brilliant">
+            <div class="brand-banner__line brand-banner__line--top"></div>
+            <div class="brand-banner__logo">
+              <span class="logo-placeholder">Premium Wet Wipes</span>
+              <small>Влажные салфетки • 15–120 шт</small>
+            </div>
+            <div class="brand-banner__product">
+              <img src="assets/img/home/1.png" alt="Premium Wet Wipes"
+                   style="--w: 310px; --x: -30px; --y: 0px; --rot: 0deg;">
+            </div>
+            <div class="brand-banner__line brand-banner__line--bottom"></div>
+          </a>
+
+          <!-- 7. Window Cleaner (5.png) -->
+          <a href="catalog.html?cat=window" class="brand-banner brand-banner--titi">
+            <div class="brand-banner__line brand-banner__line--top"></div>
+            <div class="brand-banner__logo">
+              <span class="logo-placeholder">Window Cleaner</span>
+              <small>Спрей для стёкол • Titi 750 ml</small>
+            </div>
+            <div class="brand-banner__product">
+              <img src="assets/img/home/5.png" alt="Window Cleaner"
+                   style="--w: 220px; --x: -6px; --y: -4px; --rot: 0deg;">
+            </div>
+            <div class="brand-banner__line brand-banner__line--bottom"></div>
+          </a>
+
+          <!-- 8. Rubbish bag (8.png) -->
+          <a href="catalog.html?cat=bags" class="brand-banner brand-banner--bags">
+            <div class="brand-banner__line brand-banner__line--top"></div>
+            <div class="brand-banner__logo">
+              <span class="logo-placeholder">Rubbish bag</span>
+              <small>Пакеты для мусора • Zir-zibil 10L–120L</small>
+            </div>
+            <div class="brand-banner__product">
+              <img src="assets/img/home/8.png" alt="Rubbish bag"
+                   style="--w: 230px; --x: -20px; --y: 0px; --rot: 0deg;">
+            </div>
+            <div class="brand-banner__line brand-banner__line--bottom"></div>
+          </a>
+
+        </div>
+
+        <div class="showcase-cta">
+          <a href="catalog.html" class="btn btn--primary magnetic">
+            <span>Смотреть все 120+ позиций с характеристиками</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         БЛОК 3: СЕРТИФИКАТЫ КАЧЕСТВА И НАГРАДЫ
+         ========================================== -->
+    <section class="certs-section" id="certificates">
+      <div class="container">
+        <div class="section-head section-head--center">
+          <span class="section-kicker">Международные стандарты</span>
+          <h2 class="section-title">Сертификаты качества TäçHil</h2>
+          <p class="certs-subtitle">
+            Продукция соответствует 8 международным стандартам качества ISO и отмечена наградой EBRD. Нажмите на документ, чтобы увеличить.
+          </p>
+        </div>
+
+        <div class="certs-grid">
+          <div class="cert-card" data-cert-title="Сертификат ISO 9001">
+            <div class="cert-frame">
+              <!-- <img src="assets/img/certs/cert-1.jpg" alt="Сертификат ISO 9001" loading="lazy"> -->
+              <div class="cert-placeholder">
+                <span class="cert-placeholder__icon">📄</span>
+                <strong>Фото сертификата 1</strong>
+                <small>assets/img/certs/cert-1.jpg</small>
+              </div>
+              <div class="cert-zoom-badge">Увеличить</div>
+            </div>
+            <p class="cert-caption">Сертификат соответствия ISO</p>
+          </div>
+
+          <div class="cert-card" data-cert-title="Награда EBRD">
+            <div class="cert-frame">
+              <!-- <img src="assets/img/certs/cert-2.jpg" alt="Награда EBRD" loading="lazy"> -->
+              <div class="cert-placeholder">
+                <span class="cert-placeholder__icon">🏆</span>
+                <strong>Фото сертификата 2</strong>
+                <small>assets/img/certs/cert-2.jpg</small>
+              </div>
+              <div class="cert-zoom-badge">Увеличить</div>
+            </div>
+            <p class="cert-caption">EBRD’s #1 Pride in Central Asia</p>
+          </div>
+
+          <div class="cert-card" data-cert-title="Гигиенический сертификат">
+            <div class="cert-frame">
+              <!-- <img src="assets/img/certs/cert-3.jpg" alt="Гигиенический сертификат" loading="lazy"> -->
+              <div class="cert-placeholder">
+                <span class="cert-placeholder__icon">📄</span>
+                <strong>Фото сертификата 3</strong>
+                <small>assets/img/certs/cert-3.jpg</small>
+              </div>
+              <div class="cert-zoom-badge">Увеличить</div>
+            </div>
+            <p class="cert-caption">Сертификат безопасности</p>
+          </div>
+
+          <div class="cert-card" data-cert-title="Декларация качества">
+            <div class="cert-frame">
+              <!-- <img src="assets/img/certs/cert-4.jpg" alt="Декларация качества" loading="lazy"> -->
+              <div class="cert-placeholder">
+                <span class="cert-placeholder__icon">📄</span>
+                <strong>Фото сертификата 4</strong>
+                <small>assets/img/certs/cert-4.jpg</small>
+              </div>
+              <div class="cert-zoom-badge">Увеличить</div>
+            </div>
+            <p class="cert-caption">Декларация соответствия</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         БЛОК 4: B2B И МОМЕНТАЛЬНЫЙ ЗАПРОС ПРАЙСА
+         ========================================== -->
+    <section class="b2b-section" id="b2b">
+      <div class="container">
+        <div class="b2b-card">
+          <div class="b2b-card__info">
+            <span class="section-kicker">B2B • Опт и Экспорт</span>
+            <h2 class="section-title">Получить оптовый прайс-лист TäçHil</h2>
+            <p class="b2b-card__desc">
+              Прямые поставки от производителя для торговых сетей, дистрибьюторов и HoReCa. Выберите удобный канал связи — заявка сформируется автоматически.
+            </p>
+            <div class="b2b-badges">
+              <span>✓ Цены от завода</span>
+              <span>✓ Логистика в м³ и брутто</span>
+              <span>✓ Экспортные документы ISO</span>
+            </div>
+          </div>
+
+          <form class="b2b-form" id="b2bForm">
+            <div class="b2b-form__row">
+              <input type="text" id="clientName" placeholder="Имя или компания *" required />
+              <input type="text" id="clientPhone" placeholder="Ваш телефон *" required />
+            </div>
+
+            <div class="b2b-form__row">
+              <select id="clientType">
+                <option value="Оптовый дистрибьютор">Оптовый дистрибьютор</option>
+                <option value="Розничный магазин / Сеть">Розничный магазин / Сеть</option>
+                <option value="HoReCa / Клининг">HoReCa / Клининг</option>
+                <option value="Экспорт за рубеж">Экспорт за рубеж</option>
+              </select>
+              <input type="text" id="clientCity" placeholder="Город / Страна доставки" />
+            </div>
+
+            <div class="b2b-selected-info" id="b2bSelectedInfo" style="display: none;"></div>
+
+            <p class="b2b-send-label">Отправить запрос и получить прайс через:</p>
+            <div class="b2b-messenger-btns">
+              <button type="button" class="btn-msg btn-msg--wa magnetic" data-send="whatsapp">
+                <span>WhatsApp</span>
+              </button>
+              <button type="button" class="btn-msg btn-msg--tg magnetic" data-send="telegram">
+                <span>Telegram</span>
+              </button>
+              <button type="button" class="btn-msg btn-msg--mail magnetic" data-send="email">
+                <span>Email</span>
+              </button>
+            </div>
+            <p class="form-note" id="formStatus"></p>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer main-layer" id="contacts">
+    <div class="container footer__grid">
+      <div>
+        <a href="index.html" class="logo" aria-label="TäçHil">
+        <img src="assets/img/logo.png" alt="TäçHil" class="logo__img" />
+      </a>
+        <p class="footer__desc">Ведущий производитель бытовой химии и средств гигиены в Туркменистане с 2006 года.</p>
+      </div>
+
+      <div>
+        <h4>Адрес производства</h4>
+        <p>38 Zumerret str., Industrial Zone,<br>Ak bugdaý etrap, Ahal region, Turkmenistan</p>
+      </div>
+
+      <div>
+        <h4>Отдел продаж и экспорта</h4>
+        <p><a href="tel:+99312595457">+993 12 595457</a></p>
+        <p><a href="mailto:export@tachil.com">export@tachil.com</a></p>
+        <p><a href="https://www.tachil.com" target="_blank">www.tachil.com</a></p>
+      </div>
+    </div>
+    <div class="container footer__bottom">
+      <span>© 2026 TäçHil. Все права защищены.</span>
+      <span>Чистота и качество, проверенные временем</span>
+    </div>
+  </footer>
+
+  <!-- Просмотр сертификата (Lightbox) -->
+  <div class="cert-lightbox" id="certLightbox" aria-hidden="true">
+    <div class="cert-lightbox__backdrop" id="certLightboxBg"></div>
+    <div class="cert-lightbox__content">
+      <button class="cert-lightbox__close" id="certLightboxClose" aria-label="Закрыть">✕</button>
+      <div id="certLightboxBody"></div>
+    </div>
+  </div>
+
+  <!-- Библиотеки CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+  <!-- Наши скрипты -->
+   <script src="js/i18n.js"></script>
+  <script src="js/three-scene.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
